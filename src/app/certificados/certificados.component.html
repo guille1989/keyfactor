@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+        <th (click)="sortTable('id')">Id</th>
+        <th (click)="sortTable('name')">Name</th>
+        <th (click)="sortTable('date')">Date</th>
+        <th (click)="sortTable('email')">Email</th>
+        <th (click)="sortTable('active')">Activate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let certificate of tableData | paginate: { itemsPerPage: pageSize, currentPage: currentPage }">
+        <td>{{ certificate.id }}</td>
+        <td>{{ certificate.name }}</td>
+        <td>{{ formatDate(certificate.date) }}</td>
+        <td>{{ certificate.email }}</td>
+        <td>{{ certificate.active }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>

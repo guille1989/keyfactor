@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+$primary-color: #cdabd2;
+$font-size: 16px;
+
+.body {
+    background-color: $primary-color;
+    font-size: $font-size;
+}
